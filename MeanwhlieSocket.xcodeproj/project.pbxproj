@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		ED0573E015D9B1A500566898 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = ED0573DF15D9B1A500566898 /* main.c */; };
 		ED0573E215D9B1A500566898 /* MeanwhlieSocket.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = ED0573E115D9B1A500566898 /* MeanwhlieSocket.1 */; };
+		ED0573E915D9B37C00566898 /* libmeanwhile.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0573E815D9B37C00566898 /* libmeanwhile.1.dylib */; };
+		EDB4360715DA049E00A87815 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB4360615DA049E00A87815 /* CoreFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,8 @@
 		ED0573DB15D9B1A500566898 /* MeanwhlieSocket */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MeanwhlieSocket; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0573DF15D9B1A500566898 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		ED0573E115D9B1A500566898 /* MeanwhlieSocket.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MeanwhlieSocket.1; sourceTree = "<group>"; };
+		ED0573E815D9B37C00566898 /* libmeanwhile.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmeanwhile.1.dylib; path = ../../../../../../usr/local/lib/libmeanwhile.1.dylib; sourceTree = "<group>"; };
+		EDB4360615DA049E00A87815 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB4360715DA049E00A87815 /* CoreFoundation.framework in Frameworks */,
+				ED0573E915D9B37C00566898 /* libmeanwhile.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +50,8 @@
 		ED0573D015D9B1A500566898 = {
 			isa = PBXGroup;
 			children = (
+				EDB4360615DA049E00A87815 /* CoreFoundation.framework */,
+				ED0573E815D9B37C00566898 /* libmeanwhile.1.dylib */,
 				ED0573DE15D9B1A500566898 /* MeanwhlieSocket */,
 				ED0573DC15D9B1A500566898 /* Products */,
 			);
@@ -176,6 +184,19 @@
 		ED0573E615D9B1A500566898 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/meanwhile,
+					"/usr/local/lib/glib-2.0/include",
+					"/usr/local/include/glib-2.0/gobject",
+					"/usr/local/include/glib-2.0/gio",
+					"/usr/local/include/glib-2.0",
+					"/usr/local/include/glib-2.0/glib",
+					/usr/local/include,
+				);
+				OTHER_LDFLAGS = (
+					"-lglib-2.0",
+					"-L/usr/local/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -183,6 +204,19 @@
 		ED0573E715D9B1A500566898 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/meanwhile,
+					"/usr/local/lib/glib-2.0/include",
+					"/usr/local/include/glib-2.0/gobject",
+					"/usr/local/include/glib-2.0/gio",
+					"/usr/local/include/glib-2.0",
+					"/usr/local/include/glib-2.0/glib",
+					/usr/local/include,
+				);
+				OTHER_LDFLAGS = (
+					"-lglib-2.0",
+					"-L/usr/local/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -206,6 +240,7 @@
 				ED0573E715D9B1A500566898 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
